@@ -60,8 +60,6 @@ internal class Startup
         app.UseRouting();
         app.UseHttpsRedirection();
         app.UseCors("AllowAll");
-        app.UseAuthentication();
-        app.UseAuthorization();
         app.UseApiVersioning();
         app.UseEndpoints(endpoints =>
         {

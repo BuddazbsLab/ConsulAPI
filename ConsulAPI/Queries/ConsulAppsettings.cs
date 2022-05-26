@@ -16,13 +16,11 @@ namespace ConsulAPI.Queries
         public JObject GetSettings()
         {
 
-            using (var fs = new StreamReader(AppsettingsPath))
-            {
-                  string json = fs.ReadToEnd();
-                  var jsoon = JObject.Parse(json);
+            using var fs = new StreamReader(AppsettingsPath);
+            string json = fs.ReadToEnd();
+            var jsoon = JObject.Parse(json);
 
-                  return jsoon;
-            }
+            return jsoon;
         }
     }
 }
