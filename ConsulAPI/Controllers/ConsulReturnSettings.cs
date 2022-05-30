@@ -7,7 +7,7 @@ namespace ConsulAPI.Controllers
     [Produces("application/json")]
     [Route("api/{version:apiVersion}/[controller]")]
     [ApiController]
-    public class ConsulReturnSettings : ControllerBase
+    public class ConsulReturnSettings : BaseController
     {
 
         /// <summary>
@@ -21,9 +21,9 @@ namespace ConsulAPI.Controllers
         /// <response code="200">Success</response>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ContentResult Get()
+        public override ContentResult Get()
         {
-            ConsulAppsettings consulAppsettings = new ConsulAppsettings();
+            ConsulAppsettings consulAppsettings = new();
             var res = consulAppsettings.GetSettings();
 
             return Content(res.ToString(), "application/json");
