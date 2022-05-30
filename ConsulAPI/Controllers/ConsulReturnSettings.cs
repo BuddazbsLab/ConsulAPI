@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ConsulAPI.Controllers
 {
-    [ApiVersion("1.0")]
+    [ApiVersion("1")]
     [Produces("application/json")]
     [Route("api/{version:apiVersion}/[controller]")]
     [ApiController]
